@@ -5,3 +5,7 @@ body {
 .menu {
     margin-bottom: 20px;
 }
+
+.ui.card>.image>img, .ui.cards>.card>.image>img {
+    height: 300px;
+}
