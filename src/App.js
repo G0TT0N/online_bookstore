@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
 import {setBooks} from "./actions/booksAct";
+import MenuComponent from "./Components/Menu";
+import {Container} from "semantic-ui-react";
+import BookCard from "./Components/BookCard";
+import { Card } from 'semantic-ui-react'
+
 
 class App extends Component {
     componentWillMount() {
@@ -14,13 +19,16 @@ class App extends Component {
     render() {
         const {books, isReady} = this.props;
         return (
-            <ul>
-                {!isReady
-                    ? 'Download...'
-                    : books.map(book => (
-                        <li><b>{book.title}</b> - {book.author}</li>
-                    ))}
-            </ul>
+            <Container>
+                <MenuComponent/>
+                <Card.Group itemsPerRow={4}>
+                    {!isReady
+                        ? 'Download...'
+                        : books.map(book => (
+                            <BookCard {...book}/>
+                        ))}
+                </Card.Group>
+            </Container>
         );
     }
 }
