@@ -1,5 +1,6 @@
 const initialState = {
-    filterBy: 'all'
+    filterBy: 'all',
+    searchQuery: '',
 };
 
 export default (state = initialState, action) => {
@@ -8,6 +9,11 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 filterBy: action.payload
+            };
+        case 'SET_QUERY':
+            return {
+                ...state,
+                searchQuery: action.payload
             };
         default:
             return state

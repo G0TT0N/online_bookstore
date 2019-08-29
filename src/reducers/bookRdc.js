@@ -9,14 +9,14 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 items: action.payload,
-                isReady: true
+                isReady: true,
             };
         case 'SET_IS_READY':
             return {
                 ...state,
-                isReady: action.payload
+                isReady: action.payload,
             };
         default:
-            return state
+            return state;
     }
-}
+};

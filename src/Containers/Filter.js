@@ -4,13 +4,15 @@ import FilterContainer from "../Components/Filter";
 import * as filterActions from "../actions/filterAct";
 import {bindActionCreators} from "redux";
 
-const mapStateToProps = ({books}) => ({
-    filterBy: books.filterBy,
+const mapStateToProps = ({books, filter}) => ({
+    filterBy: filter.filterBy,
 });
 
 const mapDispatchToProps = dispatch => ({
     ...bindActionCreators(filterActions, dispatch),
 });
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(FilterContainer);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(FilterContainer);
