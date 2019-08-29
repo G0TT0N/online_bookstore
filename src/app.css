@@ -9,3 +9,8 @@ body {
 .ui.card>.image>img, .ui.cards>.card>.image>img {
     height: 300px;
 }
+
+.ui.four.cards>.card {
+    width: 200px;
+    margin: 10px auto;
+}

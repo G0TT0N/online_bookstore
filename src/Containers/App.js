@@ -3,9 +3,25 @@ import {connect} from 'react-redux';
 import * as booksActions from "../actions/booksAct";
 import App from '../Components/App'
 import {bindActionCreators} from "redux";
+import orderBy from 'lodash/orderBy';
+
+const sortBy = (books, filterBy) => {
+    switch (filterBy) {
+        case 'all':
+            return orderBy(books);
+        case 'price_high':
+            return orderBy(books, 'price', 'desc');
+        case 'price_low':
+            return orderBy(books, 'price', 'asc');
+        case 'author':
+            return orderBy(books, 'author', 'asc');
+        default:
+            return books;
+    }
+};
 
 const mapStateToProps = ({books}) => ({
-    books: books.items,
+    books: sortBy(books.items, books.filterBy),
     isReady: books.isReady
 });
 
