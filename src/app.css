@@ -7,7 +7,7 @@ body {
 }
 
 .ui.card>.image>img, .ui.cards>.card>.image>img {
-    height: 300px;
+    height: 250px;
 }
 
 .ui.four.cards>.card {

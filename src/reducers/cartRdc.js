@@ -1,5 +1,5 @@
 const initialState = {
-    items: [],
+    items: []
 };
 
 export default (state = initialState, action) => {
@@ -11,7 +11,6 @@ export default (state = initialState, action) => {
                     ...state.items,
                     action.payload
                 ],
-
             };
         case 'REMOVE_BOOK_FROM_CART':
             return {
